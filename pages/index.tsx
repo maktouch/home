@@ -173,15 +173,6 @@ export default function Home() {
       <Section title="Work Experience">
         <Timeline>
           <TimelineItem
-            href="https://getwiser.com"
-            logo="/getwiser.svg"
-            title="Wiser"
-            subtitle="2020 - 2021 @ Montreal, Canada"
-          >
-            Technical Co-Founder, Architect
-          </TimelineItem>
-
-          <TimelineItem
             href="https://splitmedialabs.com"
             logo="/sml.svg"
             title="SplitmediaLabs"
