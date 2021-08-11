@@ -269,7 +269,7 @@ export default function Home() {
             title="getwiser.com"
             subtitle="2020 - 2021"
           >
-            Web app for the Medical CPD industry. <br />
+            Web app for the Medical CPD industry (no longer active) <br />
             Technology: HLS Video Streaming, RTMP Live Stream, React, NextJS,
             NodeJS GraphQL, Postgres, Redis, Docker, Kubernetes, Vercel,
             Cloudflare, Google Cloud, AWS, Stripe
