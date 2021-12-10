@@ -142,6 +142,8 @@ function Item({ logo, href, title }) {
   );
 }
 
+const currentYear = new Date().getFullYear();
+
 export default function Home() {
   return (
     <div className="pt-10 lg:px-52 md:px-32 sm:px-16 text-gray-900">
@@ -176,7 +178,7 @@ export default function Home() {
             href="https://splitmedialabs.com"
             logo="/sml.svg"
             title="SplitmediaLabs"
-            subtitle="2017 - 2021 @ Metro Manila, Philippines"
+            subtitle={`2017 - ${currentYear} @ Metro Manila, Philippines & Montreal, Canada`}
           >
             <p className="mb-3">VP of Software Engineering, Architect</p>
             <ul className="list-disc text-sm text-gray-500">
@@ -261,8 +263,18 @@ export default function Home() {
         </Timeline>
       </Section>
 
-      <Section title="Latest Projects">
+      <Section title="Latest Commercial Projects">
         <Timeline>
+          <TimelineItem
+            href="https://cloud.xsplit.com"
+            logo="/xsplit-cloud.svg"
+            title="XSplit Cloud"
+            subtitle="2021"
+          >
+            Cloud drive for XSplit products <br />
+            Technology: ffmpeg, React, NextJS, NodeJS (Typescript), GraphQL,
+            MySQL, Redis, Docker, Kubernetes, Cloudflare, Google Cloud
+          </TimelineItem>
           <TimelineItem
             href="https://getwiser.com"
             logo="/getwiser.svg"
@@ -271,8 +283,9 @@ export default function Home() {
           >
             Web app for the Medical CPD industry (no longer active) <br />
             Technology: HLS Video Streaming, RTMP Live Stream, React, NextJS,
-            NodeJS GraphQL, Postgres, Redis, Docker, Kubernetes, Vercel,
-            Cloudflare, Google Cloud, AWS, Stripe
+            NodeJS (typescript), GraphQL, Postgres, Redis, Docker, Kubernetes,
+            Vercel, Cloudflare, Google Cloud, AWS, Stripe. <br />
+            Wiser has unfortunately been dissolved.
           </TimelineItem>
 
           <TimelineItem
@@ -301,6 +314,16 @@ export default function Home() {
           </TimelineItem>
 
           <TimelineItem
+            // href="#"
+            logo="/mailtorch.jpeg"
+            title="MailTorch"
+            subtitle="2018"
+          >
+            Self hosted email distribution platform. <br />
+            MailTorch has unfortunately been dissolved.
+          </TimelineItem>
+
+          <TimelineItem
             href="https://www.xsplit.com/vcam"
             logo="/vcam.svg"
             title="XSplit VCam"
@@ -321,13 +344,24 @@ export default function Home() {
             A social network for Gamers. Backend is inspired by Facebook (Graph
             Database, GraphQL). Also includes a CEF-based Desktop App. <br />
             Technology: PHP, Laravel, React, NodeJS, MySQL, Redis, GraphQL,
-            Docker, Kubernetes, Google Cloud
+            Docker, Kubernetes, Google Cloud <br />
+            Player has unfortunately been dissolved.
           </TimelineItem>
         </Timeline>
       </Section>
 
       <Section title="Side Projects / Open Source">
         <Timeline>
+          <TimelineItem
+            href="https://makaraoke.ca"
+            logo="/makaraoke.png"
+            title="makaraoke.ca"
+            subtitle="2021"
+          >
+            Awesome Karaoke at home. A small rewrite of MyntPlayer with karaoke
+            in mind. Has real-time queuing, and cost 0$ to host. NextJS,
+            Supabase, Node, and all in Typescript.
+          </TimelineItem>
           <TimelineItem
             href="https://github.com/SplitmediaLabsLimited/devctl"
             logo="/sml-ops.png"
@@ -407,7 +441,7 @@ export default function Home() {
       <Section title="Contact">
         <Timeline>
           <Item
-            href="mailto:makara.aktee.sok@gmail.com"
+            href="mailto:me@maktouch.com"
             logo={
               <svg
                 className="h-6 w-6 flex items-center justify-center text-gray-500"
@@ -424,7 +458,7 @@ export default function Home() {
                 />
               </svg>
             }
-            title="makara.aktee.sok@gmail.com"
+            title="me@maktouch.com"
           />
           <Item
             href="https://www.linkedin.com/in/makara-sok/"
