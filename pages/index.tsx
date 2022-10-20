@@ -74,7 +74,9 @@ export default function Home() {
             </p>
             <ul className="list-disc text-sm text-gray-500">
               <li>Built the MVP from scratch mostly alone</li>
-              <li>Onboarded the first clients, and testing the market-fit</li>
+              <li>
+                Onboarded the first clients, and tested the product-market-fit
+              </li>
               <li>Interviewed and hired engineers</li>
               <li>Built a Shopify Storefront App and got approved</li>
             </ul>
@@ -85,9 +87,14 @@ export default function Home() {
             title="VideoCom"
             subtitle="2022"
           >
-            Previously called XSplit Cloud <br />
-            Technology: ffmpeg, React, NextJS, NodeJS (Typescript), GraphQL,
-            MySQL, Redis, Docker, Kubernetes, Cloudflare, Google Cloud
+            <p className="mb-3">
+              Apps and platform to level up your communication. Previously
+              called XSplit Cloud
+            </p>
+            <p className="mb-3">
+              Technology: ffmpeg, React, NextJS, NodeJS (Typescript), GraphQL,
+              MySQL, Redis, Docker, Kubernetes, Cloudflare, Google Cloud
+            </p>
           </TimelineItem>
           <TimelineItem
             href="https://cloud.xsplit.com"
