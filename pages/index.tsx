@@ -1,146 +1,6 @@
 import Head from "next/head";
 
-const Anchor = () => (
-  <svg
-    className="inline w-4 h-4 "
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-  >
-    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-  </svg>
-);
-
-function Section({ title, children }) {
-  return (
-    <div className="my-8">
-      <h2 className="text-base">{title}</h2>
-      {children}
-    </div>
-  );
-}
-
-function Text({ children }) {
-  return <p className="text-gray-500">{children}</p>;
-}
-
-function Timeline({ children }) {
-  return (
-    <div className="flow-root mt-5 ">
-      <ul className="-mb-8">{children}</ul>
-    </div>
-  );
-}
-
-function Logo({ logo, title }) {
-  return (
-    <>
-      {typeof logo === "string" && (
-        <img
-          className="h-10 w-10 rounded-lg bg-gray-100 flex items-center justify-center"
-          src={logo}
-          alt={title}
-        />
-      )}
-
-      {typeof logo !== "string" && logo}
-
-      <span className="absolute -bottom-0.5 -right-1 bg-white rounded-tl px-0.5 py-px" />
-    </>
-  );
-}
-
-function TimelineItem({
-  href = null,
-  logo,
-  title,
-  subtitle = null,
-  children = null,
-  last = false,
-}) {
-  return (
-    <li>
-      <div className="relative pb-8">
-        {!last && (
-          <span
-            className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
-            aria-hidden="true"
-          />
-        )}
-        <div className="relative flex items-start space-x-3">
-          {href && (
-            <a href={href} className="relative" target="_blank">
-              <Logo logo={logo} title={title} />
-            </a>
-          )}
-
-          {!href && <Logo logo={logo} title={title} />}
-
-          <div className="min-w-0 flex-1">
-            <div>
-              <div className="text-sm">
-                {href && (
-                  <a
-                    href={href}
-                    className="font-medium text-gray-900"
-                    target="_blank"
-                  >
-                    {title} <Anchor />
-                  </a>
-                )}
-
-                {!href && (
-                  <span className="font-medium text-gray-900">{title}</span>
-                )}
-              </div>
-              <p className="mt-0.5 text-sm text-gray-500">{subtitle}</p>
-            </div>
-            <div className="mt-2 text-sm text-gray-700">{children}</div>
-          </div>
-        </div>
-      </div>
-    </li>
-  );
-}
-
-function Item({ logo, href, title }) {
-  return (
-    <li>
-      <div className="relative pb-4">
-        <div className="relative flex items-start space-x-3">
-          {href && (
-            <a href={href} className="relative" target="_blank">
-              <Logo logo={logo} title={title} />
-            </a>
-          )}
-
-          {!href && <Logo logo={logo} title={title} />}
-
-          <div className="min-w-0 flex-1">
-            <div>
-              <div className="text-sm">
-                {href && (
-                  <a
-                    href={href}
-                    className="font-medium text-gray-900"
-                    target="_blank"
-                  >
-                    {title}
-                  </a>
-                )}
-
-                {!href && (
-                  <span className="font-medium text-gray-900">{title}</span>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-  );
-}
+import { Item, Section, Text, Timeline, TimelineItem } from "../components";
 
 const currentYear = new Date().getFullYear();
 
@@ -158,26 +18,216 @@ export default function Home() {
           <h1 className="text-xl">Makara Sok</h1>
           <p className="mt-1 text-gray-500 text-sm">
             Technical Co-Founder, Software Architect, Product Manager, Ops
-            Engineer, Full Stack Developer in Montreal, Canada
+            Engineer, Full Stack Developer, Principal Software Engineer in
+            Montreal, Canada
           </p>
         </div>
       </div>
       <Section title="About">
         <Text>
           Hi 👋🏻 I'm Mak. People and companies usually hire me when they have a
-          project that they need implemented fast and well. I have over 15 years
-          of experience in tech and 3 succesful startups under my belt. I'll
-          basically build your idea and let the market validate it, and if it
-          all goes well, I'll help you build your team.
+          project that they need implemented fast and well. I have over{" "}
+          {currentYear - 2006} years of experience in tech and 3 succesful
+          startups under my belt. I'll basically build your idea and let the
+          market validate it, and if it all goes well, I'll help you build your
+          team. If you already have something, I can come in and help make your
+          processes more efficient.
         </Text>
+      </Section>
+
+      <Section title="Latest Commercial Projects & Contracts">
+        <Timeline>
+          <TimelineItem
+            href="https://founderpath.com"
+            logo="/founderpath.svg"
+            title="Founderpath"
+            subtitle="2022"
+          >
+            <p className="mb-3">
+              Startup that helps Bootstrapped SaaS get capital
+            </p>
+            <p className="mb-3">
+              Technology: Laravel, React, MySQL, Redis, Docker, Kubernetes,
+              DigitalOcean
+            </p>
+            <ul className="list-disc text-sm text-gray-500">
+              <li>Migrated from Laravel Forge to Docker + Kubernetes</li>
+              <li>Implemented a real CI/CD with reproducible builds</li>
+              <li>Implemented a proper secrets / config management system</li>
+              <li>Improve onboarding of new devs</li>
+            </ul>
+          </TimelineItem>
+          <TimelineItem
+            href="https://creatorcart.com"
+            logo="/creatorcart.svg"
+            title="CreatorCart"
+            subtitle="2022"
+          >
+            <p className="mb-3">
+              Micro-shops to connect Shops with Creators and drive it with SMS
+              Campaigns
+            </p>
+            <p className="mb-3">
+              Technology: React, NextJS, NodeJS (Typescript), GraphQL,
+              PostgresQL, Redis, Docker, Kubernetes, Cloudflare, Google Cloud,
+              Temporal.io, Twilio, Shopify, SFCC, Retool
+            </p>
+            <ul className="list-disc text-sm text-gray-500">
+              <li>Built the MVP from scratch mostly alone</li>
+              <li>Onboarded the first clients, and testing the market-fit</li>
+              <li>Interviewed and hired engineers</li>
+              <li>Built a Shopify Storefront App and got approved</li>
+            </ul>
+          </TimelineItem>
+          <TimelineItem
+            href="https://videocom.com"
+            logo="/videocom.svg"
+            title="VideoCom"
+            subtitle="2022"
+          >
+            Previously called XSplit Cloud <br />
+            Technology: ffmpeg, React, NextJS, NodeJS (Typescript), GraphQL,
+            MySQL, Redis, Docker, Kubernetes, Cloudflare, Google Cloud
+          </TimelineItem>
+          <TimelineItem
+            href="https://cloud.xsplit.com"
+            logo="/xsplit-cloud.svg"
+            title="XSplit Cloud"
+            subtitle="2021"
+            dead
+          >
+            Cloud drive for XSplit products <br />
+            Technology: ffmpeg, React, NextJS, NodeJS (Typescript), GraphQL,
+            MySQL, Redis, Docker, Kubernetes, Cloudflare, Google Cloud
+          </TimelineItem>
+          <TimelineItem
+            href="https://getwiser.com"
+            logo="/getwiser.svg"
+            title="getwiser.com"
+            subtitle="2020 - 2021"
+            dead
+          >
+            Web app for the Medical CPD industry (no longer active) <br />
+            Technology: HLS Video Streaming, RTMP Live Stream, React, NextJS,
+            NodeJS (typescript), GraphQL, Postgres, Redis, Docker, Kubernetes,
+            Vercel, Cloudflare, Google Cloud, AWS, Stripe. <br />
+            Wiser has unfortunately been dissolved.
+          </TimelineItem>
+
+          <TimelineItem
+            href="https://www.xsplit.com/connect-webcam"
+            logo="/xsplit-webcam.svg"
+            title="XSplit Connect: Webcam"
+            subtitle="2020"
+          >
+            Mobile companion app for XSplit VCam, allows you to use your phone's
+            camera as a webcam. <br />
+            Responsibilities: API, Project Manager
+            <br />
+            Technology: NodeJS, MySQL, Android Java/Kotlin, Objective-C/Swift
+          </TimelineItem>
+
+          <TimelineItem
+            href="https://www.xsplit.com"
+            logo="/xsplit.png"
+            title="xsplit.com"
+            subtitle="2017 - 2020"
+          >
+            Main website and API for XSplit. Averages 1M+ Monthly Uniques
+            Visitor, 9M+ page views per day. <br />
+            Technology: React, NodeJS, Kubernetes, Docker, Google Cloud, Vault,
+            BigQuery, MySQL, Helm, Redis, Google Cloud Pubsub
+          </TimelineItem>
+
+          <TimelineItem
+            // href="#"
+            logo="/mailtorch.jpeg"
+            title="MailTorch"
+            subtitle="2018"
+            dead
+          >
+            Self hosted email distribution platform. <br />
+            MailTorch has unfortunately been dissolved.
+          </TimelineItem>
+
+          <TimelineItem
+            href="https://www.xsplit.com/vcam"
+            logo="/vcam.svg"
+            title="XSplit VCam"
+            subtitle="2018 - 2019"
+          >
+            The most performant virtual green screen on the market. <br />
+            Responsibilities: API, Machine Learning Pipeline <br />
+            Technology: React, NodeJS, MySQL, Kubernetes, Google Cloud
+          </TimelineItem>
+
+          <TimelineItem
+            href="https://player.me"
+            logo="/player.png"
+            title="player.me"
+            subtitle="2013 - 2017"
+            last
+            dead
+          >
+            A social network for Gamers. Backend is inspired by Facebook (Graph
+            Database, GraphQL). Also includes a CEF-based Desktop App. <br />
+            Technology: PHP, Laravel, React, NodeJS, MySQL, Redis, GraphQL,
+            Docker, Kubernetes, Google Cloud <br />
+            Player has unfortunately been dissolved.
+          </TimelineItem>
+        </Timeline>
       </Section>
 
       <Section title="Work Experience">
         <Timeline>
           <TimelineItem
+            href="https://maktouch.com"
+            logo="/maktouch.svg"
+            title="Consultation Maktouch Inc."
+            subtitle={`${currentYear} @ Montreal, Canada`}
+          >
+            <p className="mb-3">Principal Engineer for hire</p>
+          </TimelineItem>
+
+          <TimelineItem
+            href="https://videocom.com"
+            logo="/videocom.svg"
+            title="Videocom"
+            subtitle={`${currentYear} @ Montreal, Canada`}
+          >
+            <p className="mb-3">Head of Cloud Services, Architect</p>
+            <ul className="list-disc text-sm text-gray-500">
+              <li>Rebrand and separation from XSplit Cloud</li>
+              <li>Migrations of services such as the CI/CD</li>
+            </ul>
+          </TimelineItem>
+
+          <TimelineItem
+            href="https://livescale.tv"
+            logo="/livescale.svg"
+            title="Livescale"
+            subtitle={`2021 - 2022 @ Montreal, Canada`}
+          >
+            <p className="mb-3">Principal Engineer, Architect</p>
+            <ul className="list-disc text-sm text-gray-500">
+              <li>
+                Decreased the onboarding time of a new hire from 3 weeks to 2
+                days
+              </li>
+              <li>Implemented a 100% Typescript culture</li>
+              <li>Overhauled CI/CD to be faster and easier to change</li>
+              <li>Migration from an ExpressJS backend to GraphQL</li>
+              <li>
+                Architecture for new ecommerce backends to be plugged in an
+                standard way
+              </li>
+            </ul>
+          </TimelineItem>
+
+          <TimelineItem
             href="https://splitmedialabs.com"
             logo="/sml.svg"
-            title="SplitmediaLabs"
+            title="SplitmediaLabs / XSplit"
             subtitle={`2017 - ${currentYear} @ Metro Manila, Philippines & Montreal, Canada`}
           >
             <p className="mb-3">VP of Software Engineering, Architect</p>
@@ -227,6 +277,7 @@ export default function Home() {
             logo="/player.png"
             title="Player.me"
             subtitle="2013 - 2017 @ Koh Samui, Thailand & Metro Manila, Philippines"
+            dead
           >
             <p className="mb-3">CTO, Technical Co-Founder, Architect</p>
             <ul className="list-disc text-sm text-gray-500">
@@ -258,94 +309,10 @@ export default function Home() {
             subtitle="2006 - 2014 @ Canada"
             last
           >
-            Freelancer, Frontend Dev, Backend Dev, Technical Advisor
-          </TimelineItem>
-        </Timeline>
-      </Section>
-
-      <Section title="Latest Commercial Projects">
-        <Timeline>
-          <TimelineItem
-            href="https://cloud.xsplit.com"
-            logo="/xsplit-cloud.svg"
-            title="XSplit Cloud"
-            subtitle="2021"
-          >
-            Cloud drive for XSplit products <br />
-            Technology: ffmpeg, React, NextJS, NodeJS (Typescript), GraphQL,
-            MySQL, Redis, Docker, Kubernetes, Cloudflare, Google Cloud
-          </TimelineItem>
-          <TimelineItem
-            href="https://getwiser.com"
-            logo="/getwiser.svg"
-            title="getwiser.com"
-            subtitle="2020 - 2021"
-          >
-            Web app for the Medical CPD industry (no longer active) <br />
-            Technology: HLS Video Streaming, RTMP Live Stream, React, NextJS,
-            NodeJS (typescript), GraphQL, Postgres, Redis, Docker, Kubernetes,
-            Vercel, Cloudflare, Google Cloud, AWS, Stripe. <br />
-            Wiser has unfortunately been dissolved.
-          </TimelineItem>
-
-          <TimelineItem
-            href="https://www.xsplit.com/connect-webcam"
-            logo="/xsplit-webcam.svg"
-            title="XSplit Connect: Webcam"
-            subtitle="2020"
-          >
-            Mobile companion app for XSplit VCam, allows you to use your phone's
-            camera as a webcam. <br />
-            Responsibilities: API, Project Manager
-            <br />
-            Technology: NodeJS, MySQL, Android Java/Kotlin, Objective-C/Swift
-          </TimelineItem>
-
-          <TimelineItem
-            href="https://www.xsplit.com"
-            logo="/xsplit.png"
-            title="xsplit.com"
-            subtitle="2017 - 2020"
-          >
-            Main website and API for XSplit. Averages 1M+ Monthly Uniques
-            Visitor, 9M+ page views per day. <br />
-            Technology: React, NodeJS, Kubernetes, Docker, Google Cloud, Vault,
-            BigQuery, MySQL, Helm, Redis, Google Cloud Pubsub
-          </TimelineItem>
-
-          <TimelineItem
-            // href="#"
-            logo="/mailtorch.jpeg"
-            title="MailTorch"
-            subtitle="2018"
-          >
-            Self hosted email distribution platform. <br />
-            MailTorch has unfortunately been dissolved.
-          </TimelineItem>
-
-          <TimelineItem
-            href="https://www.xsplit.com/vcam"
-            logo="/vcam.svg"
-            title="XSplit VCam"
-            subtitle="2018 - 2019"
-          >
-            The most performant virtual green screen on the market. <br />
-            Responsibilities: API, Machine Learning Pipeline <br />
-            Technology: React, NodeJS, MySQL, Kubernetes, Google Cloud
-          </TimelineItem>
-
-          <TimelineItem
-            href="https://player.me"
-            logo="/player.png"
-            title="player.me"
-            subtitle="2013 - 2017"
-            last
-          >
-            A social network for Gamers. Backend is inspired by Facebook (Graph
-            Database, GraphQL). Also includes a CEF-based Desktop App. <br />
-            Technology: PHP, Laravel, React, NodeJS, MySQL, Redis, GraphQL,
-            Docker, Kubernetes, Google Cloud <br />
-            Player has unfortunately been dissolved.
+            Freelancer, Frontend Dev, Backend Dev, Technical Advisor. In my
+            early days, I did a lot of contracts for a lot of clients. Mostly
+            simple frontend / ops work. A lot of wordpress, static sites,
+            e-commerces.
           </TimelineItem>
         </Timeline>
       </Section>
@@ -357,6 +324,7 @@ export default function Home() {
             logo="/makaraoke.png"
             title="makaraoke.ca"
             subtitle="2021"
+            dead
           >
             Awesome Karaoke at home. A small rewrite of MyntPlayer with karaoke
             in mind. Has real-time queuing, and cost 0$ to host. NextJS,
