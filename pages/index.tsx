@@ -41,27 +41,29 @@ export default function Home() {
             href="https://founderpath.com"
             logo="/founderpath.svg"
             title="Founderpath"
-            subtitle="2022"
+            subtitle="2022 - 2023"
           >
             <p className="mb-3">
               Startup that helps Bootstrapped SaaS get capital
             </p>
             <p className="mb-3">
               Technology: Laravel, React, MySQL, Redis, Docker, Kubernetes,
-              DigitalOcean
+              DigitalOcean, tRPC, BigQuery, Metabase
             </p>
             <ul className="list-disc text-sm text-gray-500">
               <li>Migrated from Laravel Forge to Docker + Kubernetes</li>
               <li>Implemented a real CI/CD with reproducible builds</li>
               <li>Implemented a proper secrets / config management system</li>
               <li>Improve onboarding of new devs</li>
+              <li>Implemented pipeline to BigQuery</li>
+              <li>Implemented data querying dashboards</li>
             </ul>
           </TimelineItem>
           <TimelineItem
             href="https://creatorcart.com"
             logo="/creatorcart.svg"
             title="CreatorCart"
-            subtitle="2022"
+            subtitle="2022 - 2023"
           >
             <p className="mb-3">
               Micro-shops to connect Shops with Creators and drive it with SMS
@@ -85,7 +87,7 @@ export default function Home() {
             href="https://videocom.com"
             logo="/videocom.svg"
             title="VideoCom"
-            subtitle="2022"
+            subtitle="2022 - 2023"
           >
             <p className="mb-3">
               Apps and platform to level up your communication. Previously
@@ -191,7 +193,7 @@ export default function Home() {
             href="https://maktouch.com"
             logo="/maktouch.svg"
             title="Consultation Maktouch Inc."
-            subtitle={`${currentYear} @ Montreal, Canada`}
+            subtitle={`2022 - ${currentYear} @ Montreal, Canada`}
           >
             <p className="mb-3">Principal Engineer for hire</p>
           </TimelineItem>
@@ -200,7 +202,7 @@ export default function Home() {
             href="https://videocom.com"
             logo="/videocom.svg"
             title="Videocom"
-            subtitle={`${currentYear} @ Montreal, Canada`}
+            subtitle={`2022 - ${currentYear} @ Montreal, Canada`}
           >
             <p className="mb-3">Head of Cloud Services, Architect</p>
             <ul className="list-disc text-sm text-gray-500">
@@ -235,7 +237,7 @@ export default function Home() {
             href="https://splitmedialabs.com"
             logo="/sml.svg"
             title="SplitmediaLabs / XSplit"
-            subtitle={`2017 - ${currentYear} @ Metro Manila, Philippines & Montreal, Canada`}
+            subtitle={`2017 - 2022 @ Metro Manila, Philippines & Montreal, Canada`}
           >
             <p className="mb-3">VP of Software Engineering, Architect</p>
             <ul className="list-disc text-sm text-gray-500">
@@ -330,12 +332,10 @@ export default function Home() {
             href="https://makaraoke.ca"
             logo="/makaraoke.png"
             title="makaraoke.ca"
-            subtitle="2021"
-            dead
+            subtitle="2023"
           >
             Awesome Karaoke at home. A small rewrite of MyntPlayer with karaoke
-            in mind. Has real-time queuing, and cost 0$ to host. NextJS,
-            Supabase, Node, and all in Typescript.
+            in mind.
           </TimelineItem>
           <TimelineItem
             href="https://github.com/SplitmediaLabsLimited/devctl"
