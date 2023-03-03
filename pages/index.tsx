@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import GitHubCalendar from "react-github-calendar";
 import { Item, Section, Text, Timeline, TimelineItem } from "../components";
 
 const currentYear = new Date().getFullYear();
@@ -47,6 +47,10 @@ export default function Home() {
           team. If you already have something, I can come in and help make your
           processes more efficient.
         </Text>
+      </Section>
+
+      <Section title="This year's code contributions">
+        <GitHubCalendar username="maktouch" style={{ marginTop: "1.5rem" }} />
       </Section>
 
       <Section title="Latest Commercial Projects & Contracts">
