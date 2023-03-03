@@ -1,6 +1,7 @@
 import Head from "next/head";
 import GitHubCalendar from "react-github-calendar";
 import { Item, Section, Text, Timeline, TimelineItem } from "../components";
+import { BookMeeting } from "@/components/BookMeeting";
 
 const currentYear = new Date().getFullYear();
 const github = (
@@ -46,6 +47,9 @@ export default function Home() {
           market validate it, and if it all goes well, I'll help you build your
           team. If you already have something, I can come in and help make your
           processes more efficient.
+        </Text>
+        <Text>
+          <BookMeeting />
         </Text>
       </Section>
 
