@@ -3,6 +3,20 @@ import Head from "next/head";
 import { Item, Section, Text, Timeline, TimelineItem } from "../components";
 
 const currentYear = new Date().getFullYear();
+const github = (
+  <svg
+    height="32"
+    viewBox="0 0 16 16"
+    version="1.1"
+    width="32"
+    aria-hidden="true"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+    ></path>
+  </svg>
+);
 
 export default function Home() {
   return (
@@ -48,15 +62,18 @@ export default function Home() {
             </p>
             <p className="mb-3">
               Technology: Laravel, React, MySQL, Redis, Docker, Kubernetes,
-              DigitalOcean, tRPC, BigQuery, Metabase
+              DigitalOcean, tRPC, BigQuery, Metabase, Airflow
             </p>
             <ul className="list-disc text-sm text-gray-500">
               <li>Migrated from Laravel Forge to Docker + Kubernetes</li>
               <li>Implemented a real CI/CD with reproducible builds</li>
               <li>Implemented a proper secrets / config management system</li>
+              <li>Implemented proper logging system</li>
               <li>Improve onboarding of new devs</li>
               <li>Implemented pipeline to BigQuery</li>
               <li>Implemented data querying dashboards</li>
+              <li>Revamped Airflow infrastructure and DX</li>
+              <li>Create a Google Workspace add-on</li>
             </ul>
           </TimelineItem>
           <TimelineItem
@@ -72,7 +89,8 @@ export default function Home() {
             <p className="mb-3">
               Technology: React, NextJS, NodeJS (Typescript), GraphQL,
               PostgresQL, Redis, Docker, Kubernetes, Cloudflare, Google Cloud,
-              Temporal.io, Twilio, Shopify, SFCC, Retool
+              Temporal.io, Twilio, Shopify, SalesForce CommerceCloud (SFCC),
+              Retool
             </p>
             <ul className="list-disc text-sm text-gray-500">
               <li>Built the MVP from scratch mostly alone</li>
@@ -328,6 +346,32 @@ export default function Home() {
 
       <Section title="Side Projects / Open Source">
         <Timeline>
+          <TimelineItem
+            href="https://github.com/maktouch/slack-chatgpt"
+            logo={github}
+            title="Slack ChatGPT"
+            subtitle="2023"
+          >
+            This little project is to run your own OpenAI assistant right in
+            your Slack.
+          </TimelineItem>
+          <TimelineItem
+            href="https://github.com/maktouch/namespace-cleaner"
+            logo={github}
+            title="Namespace Cleaner"
+            subtitle="2023"
+          >
+            Prunes Kubernetes namespaces based on a repo's Github PR
+          </TimelineItem>
+          <TimelineItem
+            href="https://github.com/maktouch/docker-ssh-tunnel"
+            logo={github}
+            title="Docker SSH Tunnel"
+            subtitle="2023"
+          >
+            This container is useful if you want to provide easy tunneling to
+            some servers
+          </TimelineItem>
           <TimelineItem
             href="https://makaraoke.ca"
             logo="/makaraoke.png"
