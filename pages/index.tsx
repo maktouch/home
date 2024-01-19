@@ -355,6 +355,31 @@ export default function Home() {
       <Section title="Side Projects / Open Source">
         <Timeline>
           <TimelineItem
+            href="https://github.com/maktouch/kysely-bigquery"
+            logo={github}
+            title="Kysely BigQuery Dialect"
+            subtitle="2024"
+          >
+            Query BigQuery from Kysely
+          </TimelineItem>
+          
+          <TimelineItem
+              href="https://github.com/maktouch/kysely-zod-codegen"
+              logo={github}
+              title="Kysely Zod Codegen"
+              subtitle="2023-2024"
+            >
+            Generate zod types from your database, for complete type safety with Kysely
+          </TimelineItem>
+          <TimelineItem
+            href="https://github.com/founderpathcom/finance.ts"
+            logo={github}
+            title="Finance.ts"
+            subtitle="2023"
+          >
+            Finance.ts makes it easy to incorporate common financial calculations into your application
+          </TimelineItem>
+          <TimelineItem
             href="https://github.com/maktouch/slack-chatgpt"
             logo={github}
             title="Slack ChatGPT"
