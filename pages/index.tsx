@@ -356,9 +356,9 @@ export default function Home() {
 				<Timeline>
 					<TimelineItem
 						href="https://canadaspends.com"
-						logo={github}
+						logo='/canadaspends.svg'
 						title="Canada Spends"
-						subtitle="2024"
+						subtitle="2025"
 					>
 						Canada Spends is a tool to help Canadians understand how their tax dollars are spent.
 					</TimelineItem>
