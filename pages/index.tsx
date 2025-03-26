@@ -355,6 +355,14 @@ export default function Home() {
 			<Section title="Side Projects / Open Source">
 				<Timeline>
 					<TimelineItem
+						href="https://canadaspends.com"
+						logo={github}
+						title="Canada Spends"
+						subtitle="2024"
+					>
+						Canada Spends is a tool to help Canadians understand how their tax dollars are spent.
+					</TimelineItem>
+					<TimelineItem
 						href="https://github.com/maktouch/kysely-bigquery"
 						logo={github}
 						title="Kysely BigQuery Dialect"
